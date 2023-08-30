@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+pre {
+  font-family: "Fira Code", monospace;
+  background: rgb(43, 43, 43);
+  color: white;
+  padding: 16px;
+  border-radius: 15px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+
+button {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border: 1px solid #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+    color: #777;
+  }
+}
+
+.btn-limpar {
+  background-color: #f29f05;
+
+  &:hover {
+    background-color: #f2b705;
+  }
+}
+
+.btn-enviar {
+  background-color: #4285f4;
+
+  &:hover {
+    background-color: #306ce7;
+  }
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+.icon-verified {
+  color: #00aced;
+}
+
+.icon-signpost {
+  font-size: 2rem;
+  color: #bf1b1b;
+}
+
+@media screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+  }
+}

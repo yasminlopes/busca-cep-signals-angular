@@ -1,0 +1,58 @@
+<h1>
+  <span class="material-icons icon-signpost">signpost</span>
+  {{ titulo() }}
+</h1>
+
+<form [formGroup]="form" class="flex g-8">
+  <div class="flex column">
+    <label>CEP</label>
+    <input
+      formControlName="cep"
+      type="text"
+      maxlength="8"
+      (ngModelChange)="cep.set($event)"
+    />
+  </div>
+
+  <div class="flex column">
+    <label>Endereço</label>
+    <input type="text" formControlName="logradouro" />
+  </div>
+
+  <div class="flex column">
+    <label>Bairro</label>
+    <input type="text" formControlName="bairro" />
+  </div>
+
+  <div class="flex column">
+    <label>Cidade</label>
+    <input type="text" formControlName="localidade" />
+  </div>
+</form>
+
+<br>
+
+<div class="flex">
+  <button (click)="enviarDados()" [disabled]="!form.valid" class="btn-enviar flex align-center g-8">
+    <span class="btn-icon material-icons">send</span>
+    Enviar
+  </button>
+  
+  <button (click)="limparDados()" class="btn-limpar flex align-center g-8">
+    <span class="btn-icon material-icons">delete</span>
+    Limpar
+  </button>
+</div>
+
+<br>
+
+<pre>{{ buscarCep$() | async | json }}</pre>
+
+<br>
+
+<footer>
+  <div class="flex align-center">
+    <span class="material-icons icon-verified">verified</span>
+    <span> Developed by {{ nome }} {{ sobrenome }}</span>
+  </div>
+</footer>
