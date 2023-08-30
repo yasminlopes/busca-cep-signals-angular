@@ -69,7 +69,7 @@ export class BuscaCepComponent implements OnInit {
     const cep = removerCaracteresEspeciais(this.cep());
     if (cep?.length !== 8) return of('Digite um CEP válido');
 
-    return this._buscaCepService.buscarCep(this.cep()).pipe(
+    return this._buscaCepService.buscarCep(cep).pipe(
       map((resposta) => {
         if (resposta.erro) {
           return 'Erro ao buscar CEP. Tente novamente!';
