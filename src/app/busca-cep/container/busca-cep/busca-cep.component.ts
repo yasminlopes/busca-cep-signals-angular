@@ -11,6 +11,7 @@ import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { map, of, startWith } from 'rxjs';
 import { BuscaCepService } from '../../service/busca-cep.service';
 import { Endereco } from '../../models/endereco.model';
+import { removerCaracteresEspeciais } from 'src/app/utils/removerCaracteresEspeciais';
 
 @Component({
   selector: 'app-busca-cep',
@@ -65,7 +66,8 @@ export class BuscaCepComponent implements OnInit {
   }
 
   public buscarCep$ = computed(() => {
-    if (this.cep().length !== 8) return of('Digite um CEP válido');
+    const cep = removerCaracteresEspeciais(this.cep());
+    if (cep?.length !== 8) return of('Digite um CEP válido');
 
     return this._buscaCepService.buscarCep(this.cep()).pipe(
       map((resposta) => {
