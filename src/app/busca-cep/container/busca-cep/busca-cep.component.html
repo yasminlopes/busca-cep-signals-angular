@@ -7,9 +7,10 @@
   <div class="flex column">
     <label>CEP</label>
     <input
+      cepMask
       formControlName="cep"
       type="text"
-      maxlength="8"
+      maxlength="9"
       (ngModelChange)="cep.set($event)"
     />
   </div>
