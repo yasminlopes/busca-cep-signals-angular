@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { BuscaCepComponent } from './busca-cep/container/busca-cep/busca-cep.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CepMaskDirective } from './busca-cep/directives/cep-mask.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuscaCepComponent
+    BuscaCepComponent,
+    CepMaskDirective
   ],
   imports: [
     BrowserModule,
