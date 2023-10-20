@@ -1,59 +1,33 @@
-<h1>
-  <span class="material-icons icon-signpost">signpost</span>
+<h2>
   {{ titulo() }}
-</h1>
+</h2>
 
-<form [formGroup]="form" class="flex g-8">
-  <div class="flex column">
-    <label>CEP</label>
-    <input
-      cepMask
-      formControlName="cep"
-      type="text"
-      maxlength="9"
-      (ngModelChange)="cep.set($event)"
-    />
-  </div>
+<form [formGroup]="form" class="form">
 
-  <div class="flex column">
-    <label>Endereço</label>
-    <input type="text" formControlName="logradouro" />
-  </div>
+  <label for="cep" class="form__label">
+  <span class="material-icons">search</span></label>
+  <input
+    cepMask
+    name="cep"
+    id="cep"
+    type="text"
+    maxlength="9"
+    placeholder="Busque o CEP..."
+    class="form__input"
+    formControlName="cep"
+    (ngModelChange)="cep.set($event)"/>
+  
+  <button type="submit" class="btn-submit">Buscar</button>
 
-  <div class="flex column">
-    <label>Bairro</label>
-    <input type="text" formControlName="bairro" />
-  </div>
-
-  <div class="flex column">
-    <label>Cidade</label>
-    <input type="text" formControlName="localidade" />
-  </div>
 </form>
 
-<br>
-
-<div class="flex">
-  <button (click)="enviarDados()" [disabled]="!form.valid" class="btn-enviar flex align-center g-8">
-    <span class="btn-icon material-icons">send</span>
-    Enviar
-  </button>
-  
-  <button (click)="limparDados()" class="btn-limpar flex align-center g-8">
-    <span class="btn-icon material-icons">delete</span>
-    Limpar
-  </button>
-</div>
-
-<br>
+<br> 
 
 <pre>{{ buscarCep$() | async | json }}</pre>
 
-<br>
+<br> 
 
 <footer>
-  <div class="flex align-center">
-    <span class="material-icons icon-verified">verified</span>
-    <span> Developed by {{ nome }} {{ sobrenome }}</span>
-  </div>
+  <span class="material-icons">code</span>
+  <a href="https://github.com/yasminlopes" target="_blank"> Developed by {{ nome }} {{ sobrenome }}</a>
 </footer>

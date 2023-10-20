@@ -1,23 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+* {
+  font-family: "Fira Code", monospace;
+}
 
 body {
-  font-family: "Poppins", sans-serif;
-  background: #f2f2f2;
-  color: #111111;
-}
-
-.flex {
+  min-height: 100vh;
   display: flex;
-}
-
-.column {
   flex-direction: column;
-}
-
-.g-8 {
-  gap: 8px;
-}
-
-.align-center {
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background: rgb(20, 29, 47);
+  color: rgb(255, 255, 255);
+  padding: 3.1rem 2.4rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 3.1rem 7rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
